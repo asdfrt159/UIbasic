@@ -11,23 +11,13 @@ import searchOrbi
 
 
 
-
-
 ###### 부모 UI 정보 받아오기 ######
-class SearchBot(ui_design.MyApp, searchOrbi.Crawling):   # 부모 class 명 입력
+class SearchBot(ui_design.MyApp, searchOrbi.Crawling):   # 상속했을 때는 그냥 self.함수명() 해서 바로 부모의 함수를 들고 올 수 있다.
 
     def __init__(self):
         super().__init__()  
 ###################################
 
-
-
-###################  기능 구현 ###################
-
-
-
-##################################################
-        
 
 
 ################# 버튼 기능부 ####################
@@ -40,8 +30,9 @@ class SearchBot(ui_design.MyApp, searchOrbi.Crawling):   # 부모 class 명 입�
 
     def showTotal(self) :       
         self.getInfo()
-        self.getPageList()
-        self.mainfunc()
+        self.getPageList()  # searchOrbi 상속
+        self.mainfunc()     # searchOrbi 상속
+
         #### TextBrowser 에 출력하기 ####
         self.textBrowser.clear()
         self.textBrowser.append("[total 확인]")
@@ -51,9 +42,10 @@ class SearchBot(ui_design.MyApp, searchOrbi.Crawling):   # 부모 class 명 입�
         
     def showSpread(self) :
         self.getInfo()
-        self.getPageList()
-        self.mainfunc()
-        self.setSpread()
+        self.getPageList()  # searchOrbi 상속
+        self.mainfunc()     # searchOrbi 상속
+        self.setSpread()    # searchOrbi 상속
+
         #### TextBrowser 에 출력하기 ####
         self.textBrowser.clear()
         self.textBrowser.append("[Spread sheet에 raw data 전송]")
