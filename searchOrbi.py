@@ -10,14 +10,15 @@ class Crawling :
     
     def inputData(self) :
         self.usr_search = "설탭"
-        self.usr_search_from = "0702"
+        self.usr_search_from = "0720"
         self.usr_search_to = "0802"
+
 
 
     def setSpread(self) :
         #### 구글 스프레드 시트 설정 부분 ####
         scope = ['https://spreadsheets.google.com/feeds']
-        self.json_file_name = '/Users/silnun/searchBot_ui/avian-mile-358802-8d7f045864b7.json'
+        self.json_file_name = './spreadAPI.json'
         credentials = ServiceAccountCredentials.from_json_keyfile_name(self.json_file_name, scope)
         gc = gspread.authorize(credentials)
         self.spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1NCrVULDi9_NJk8iXz6ol_0cgwr1Dt8TzCZ5DI8orfEg/edit?usp=sharing'
